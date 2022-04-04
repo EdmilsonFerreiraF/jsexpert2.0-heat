@@ -14,6 +14,14 @@ class EntityBase {
 
         return `${preffix} ${this.#name}`
     }
+
+    get birthYear() {
+        if (!this.#age) {
+            throw new Error('You must define age first!')
+        }
+
+        return new Date().getFullYear() - this.#age
+    }
 }
 
 module.exports = EntityBase
