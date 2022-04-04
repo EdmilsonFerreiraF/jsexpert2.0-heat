@@ -8,6 +8,12 @@ class EntityBase {
         this.#age = age
         this.#gender = gender
     }
+
+    get name() {
+        const preffix = this.#gender === "male" ? "Mr." : "Ms."
+
+        return `${preffix} ${this.#name}`
+    }
 }
 
 module.exports = EntityBase
