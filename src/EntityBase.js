@@ -22,6 +22,10 @@ class EntityBase {
 
         return new Date().getFullYear() - this.#age
     }
+
+    set age(value) {
+        this.#age = value
+    }
 }
 
 module.exports = EntityBase
