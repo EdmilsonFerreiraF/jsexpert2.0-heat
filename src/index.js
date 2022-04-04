@@ -17,3 +17,12 @@ const GENDER = {
     male: 'male',
     female: 'female'
 }
+
+{
+    const employee = new Employee({
+        name: 'Marylin Monroe',
+        gender: GENDER.female
+    })
+
+    assert.throws(() => employee.birthYear, { message: 'You must define age first!' })
+}
