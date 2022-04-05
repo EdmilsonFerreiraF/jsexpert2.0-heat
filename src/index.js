@@ -42,4 +42,5 @@ Date.prototype.getFullYear = () => CURRENT_YEAR
     assert.deepStrictEqual(employee.age, undefined)
     assert.deepStrictEqual(employee.gender, undefined)
     assert.deepStrictEqual(employee.grossPay, Util.formatCurrency(5000.40))
+    assert.deepStrictEqual(employee.netPay, Util.formatCurrency(4000.32))
 }
