@@ -28,6 +28,9 @@ const GENDER = {
     assert.throws(() => employee.birthYear, { message: 'You must define age first!' })
 }
 
+const CURRENT_YEAR = 2022
+Date.prototype.getFullYear = () => CURRENT_YEAR
+
 {
     const employee = new Employee({
         name: 'Edmilson Ferreira',
