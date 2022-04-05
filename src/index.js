@@ -11,7 +11,7 @@
 // }).#name)
 
 const assert = require('assert')
-const Util = require('../util')
+const Util = require('./util')
 const Employee = require('./employee')
 
 const GENDER = {
@@ -43,4 +43,20 @@ Date.prototype.getFullYear = () => CURRENT_YEAR
     assert.deepStrictEqual(employee.gender, undefined)
     assert.deepStrictEqual(employee.grossPay, Util.formatCurrency(5000.40))
     assert.deepStrictEqual(employee.netPay, Util.formatCurrency(4000.32))
+    
+    const expectedBirthYear = 2000
+    assert.deepStrictEqual(employee.birthYear, expectedBirthYear)
+
+    employee.birthYear = new Date().getFullYear() - 80
+    assert.deepStrictEqual(employee.birthYear, expectedBirthYear)
+
+    employee.age = 80
+    assert.deepStrictEqual(employee.birthYear, 1942)
+
+    console.log('\n ---employee---')
+    console.log('employee.name', employee.name)
+    console.log('employee.age', employee.age)
+    console.log('employee.gender', employee.gender)
+    console.log('employee.grossPay', employee.grossPay)
+    console.log('employee.netPay', employee.netPay)
 }

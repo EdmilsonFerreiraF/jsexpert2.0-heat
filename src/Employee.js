@@ -1,5 +1,5 @@
 const EntityBase = require("./EntityBase");
-const Util = require("../util");
+const Util = require("./util");
 
 class Employee extends EntityBase {
     static #TAXES_PERCENTUAL = 0.2
@@ -10,7 +10,7 @@ class Employee extends EntityBase {
     }
 
     get netPay() {
-        const result = this.#grosspay - (this.#grosspay * Employee.#TAXES_PERCENTUAL)
+        const result = this.#grossPay - (this.#grossPay * Employee.#TAXES_PERCENTUAL)
 
         return Util.formatCurrency(result)
     }
